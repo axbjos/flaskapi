@@ -15,6 +15,7 @@ pipeline {
     stage('deploy') {
       steps {
          sh 'pwd'
+         sh 'ls -las'
          sh 'gzip -r ../flaskapi.zip ../flaskapi'
          //sh 'scp microblog.zip 192.168.56.105:.' 
       } 
