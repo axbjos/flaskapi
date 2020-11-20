@@ -16,7 +16,7 @@ pipeline {
       steps {
          sh 'pwd'
          sh 'ls -las'
-         sh 'gzip -r ../flaskapi.zip ../flaskapi'
+         sh 'gzip -r ../flaskapi.zip *'
          //sh 'scp microblog.zip 192.168.56.105:.' 
       } 
     }
