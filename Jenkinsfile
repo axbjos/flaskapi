@@ -3,13 +3,21 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'working'
+        echo 'zipping files'
+
       }
     }
     stage('test') {
       steps {
         sh 'python3 test.py'
       }   
+    }
+    stage('deploy') {
+      steps {
+         sh 'pwd'
+         sh 'zip -r ../flaskapi.zip ../flaskapi'
+         //sh 'scp microblog.zip 192.168.56.105:.' 
+      } 
     }
   }
 }
