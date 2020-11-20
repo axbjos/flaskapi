@@ -16,7 +16,7 @@ pipeline {
       steps {
          sh 'pwd'
          sh 'ls -las'
-         sh 'gzip -r ** > flaskapi.gzip'
+         sh 'gzip * > flaskapi.gzip'
          //sh 'scp microblog.zip 192.168.56.105:.' 
       } 
     }
