@@ -12,5 +12,7 @@ class TestHello(unittest.TestCase):
         rv = self.app.get('/')
         self.assertEqual(rv.status, '200 OK')
 
+    #add two more tests please
+
 if __name__ == '__main__':
     unittest.main()
