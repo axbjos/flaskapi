@@ -11,7 +11,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/index/')
-def about():
+def index():
     return render_template('index.html')
 @app.route("/get_one_temp_api")
 def temp1():
