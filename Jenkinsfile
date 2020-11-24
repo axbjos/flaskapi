@@ -4,13 +4,12 @@ pipeline {
     stage('build') {
       steps {
         echo 'Nothing to Build'
-        sh 'pip3 install flask_pymongo'
+        sh 'pip3 install -r requirements.txt'
       }
     }
     stage('test') {
       steps {
-        sh 'export FLASK_APP=test.py'
-        sh 'python3 -m flask run'
+        sh 'python3 test.py'
       }   
     }
     stage('deploy') {
