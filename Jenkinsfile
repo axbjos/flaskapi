@@ -4,11 +4,12 @@ pipeline {
     stage('build') {
       steps {
         echo 'Nothing to Build'
+        sh 'export FLASK_APP=test.py'
       }
     }
     stage('test') {
       steps {
-        sh 'python3 -m flask run test.py'
+        sh 'python3 -m flask run'
       }   
     }
     stage('deploy') {
