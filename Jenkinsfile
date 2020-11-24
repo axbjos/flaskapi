@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'zipping files'
-
+        pip3 install flask
       }
     }
     stage('test') {
@@ -14,6 +13,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
+         echo 'zipping files'
          sh 'pwd'
          sh 'ls -las'
          sh 'tar -czvf flaskapi.tar.gz *'
