@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        pip3 install flask --user
+        echo 'Install Flask'
+        sh 'pip3 install flask --user'
       }
     }
     stage('test') {
