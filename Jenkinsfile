@@ -4,11 +4,12 @@ pipeline {
     stage('build') {
       steps {
         echo 'Nothing to Build'
-        sh 'export FLASK_APP=test.py'
+        sh 'pip3 install flask_pymongo'
       }
     }
     stage('test') {
       steps {
+        sh 'export FLASK_APP=test.py'
         sh 'python3 -m flask run'
       }   
     }
@@ -18,6 +19,7 @@ pipeline {
          sh 'pwd'
          sh 'ls -las'
          sh 'tar -czvf flaskapi.tar.gz *'
+         sh 'mv flaskapi.tar.gz /home/deploy'
       } 
     }
   }
